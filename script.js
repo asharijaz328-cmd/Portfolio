@@ -34,17 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveNavLink();
   });
 
+  // Run on initial load as well
+  updateActiveNavLink();
+
   // Highlight the nav link for the current section
   function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
     let currentSection = '';
+    const scrollPosition = window.scrollY + 200;
+
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      if (window.scrollY >= sectionTop) {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
         currentSection = section.getAttribute('id');
       }
     });
+
     navLinks.forEach(link => {
       link.classList.remove('active');
       if (link.getAttribute('href') === `#${currentSection}`) {
@@ -171,10 +178,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================
   const typingEl = document.getElementById('typing-text');
   const words = [
-    'Solutions Creator',
-    'Website Developer',
-    'E-commerce Builder',
+    'Full Stack Web Developer',
     'POS Systems Creator',
+    'E-commerce Builder',
     'Problem Solver'
   ];
   let wordIndex = 0;

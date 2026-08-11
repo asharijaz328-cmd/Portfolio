@@ -19,6 +19,9 @@
   <title>Ashar Ijaz | Portfolio</title>
 
   <!-- Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 
   <!-- Favicon (emoji fallback) -->
@@ -30,13 +33,12 @@
        NAVBAR
        ============================================ -->
   <nav id="navbar">
-    <div class="container nav-container">
+    <div class="nav-container">
       <!-- Logo -->
-      <a href="#hero" class="nav-logo">ASHAR IJAZ&lt;/&gt;</a>
+      <a href="#hero" class="nav-logo">Ashar Ijaz</a>
 
       <!-- Desktop Navigation Links -->
       <ul class="nav-links">
-        <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -90,11 +92,11 @@
 
           <!-- Typing animation -->
           <p class="hero-title">
-            <span id="typing-text">Solutions Creator</span>
+            <span id="typing-text">Website Developer</span>
           </p>
 
           <p class="hero-desc">
-            CS student at KFUEIT who enjoys building websites and practical digital tools using AI-assisted development. Still learning, but always building.
+            Computer Science undergraduate at KFUEIT focused on Web Development and learning Full Stack engineering. Experienced in building clean front-end interfaces, e-commerce stores, and custom client POS software while continuously growing my backend skills.
           </p>
 
           <!-- CTA Buttons -->
@@ -110,7 +112,7 @@
           <!-- Quick Stats -->
           <div class="hero-stats">
             <div class="stat-item">
-              <div class="stat-number" data-count="3" data-suffix="+">0+</div>
+              <div class="stat-number" data-count="4" data-suffix="+">0+</div>
               <div class="stat-label">Projects Built</div>
             </div>
             <div class="stat-item">
@@ -127,17 +129,13 @@
         <!-- Hero Visual (Right) -->
         <div class="hero-visual">
           <div class="hero-card-wrapper">
-            <!-- Floating Badges -->
-            <div class="badge-float badge-1">💡 Problem Solver</div>
-            <div class="badge-float badge-2">🎓 KFUEIT</div>
-
             <!-- Photo Card -->
             <div class="hero-avatar-card">
               <div class="avatar-photo-wrap">
-                <img src="ashar.png" alt="Ashar Ijaz" class="avatar-photo" />
+                <img src="avatar.jpg" alt="Ashar Ijaz" class="avatar-photo" />
               </div>
-              <div class="hero-card-role">Computer Science Student<br>Solutions Creator</div>
-              <div class="hero-card-uni">🎓 KFUEIT — 5th Semester</div>
+              <div class="hero-card-role">Computer Science Student<br>Website Developer</div>
+              <div class="hero-card-uni">🎓 KFUEIT - 5th Semester</div>
             </div>
           </div>
         </div>
@@ -173,43 +171,45 @@
         <!-- Right: Text Content -->
         <div class="about-text reveal-right">
           <p class="about-lead">
-            I'm Ashar — a CS student who genuinely enjoys building things, not just studying theory.
+            I'm Ashar - a CS student who enjoys building real projects, not just studying theory.
           </p>
           <p>
-            I am a Computer Science student passionate about building websites, e-commerce stores, and digital solutions using AI-assisted tools. I focus on practical development, problem solving, and creating real-world projects like POS systems and online stores.
+            I am a Computer Science undergraduate student at <strong>Khwaja Fareed University of Engineering & Information Technology (KFUEIT)</strong> focusing on <strong>Web Development</strong> and aspiring towards Full Stack engineering. I build responsive front-end applications, e-commerce platforms, and custom client projects including POS (Point of Sale) systems.
           </p>
           <p>
-            I'm in my 5th Semester at KFUEIT. I don't know everything yet, but I use AI tools smartly to build projects that actually work — and I keep improving with every one I make.
+            Right now in my 5th Semester, I'm always eager to learn new technologies, write clean code, and build practical applications that actually help people and businesses.
           </p>
 
           <!-- Info Grid — clean text labels, no generic emojis -->
           <div class="about-info-grid">
             <div class="info-item">
-              <div class="info-icon info-icon-text">KFU</div>
+              <div class="info-icon info-icon-text emoji">
+                <img src="kfueit.png" alt="KFUEIT" class="info-icon-img" onerror="this.style.display='none'; this.parentNode.textContent='🏛️';" />
+              </div>
               <div>
                 <div class="info-label">University</div>
-                <div class="info-value">KFUEIT</div>
+                <div class="info-value">Khwaja Fareed UEIT (KFUEIT)</div>
               </div>
             </div>
             <div class="info-item">
-              <div class="info-icon info-icon-text">BS</div>
+              <div class="info-icon info-icon-text emoji">🎓</div>
               <div>
                 <div class="info-label">Degree</div>
                 <div class="info-value">BS Computer Science</div>
               </div>
             </div>
             <div class="info-item">
-              <div class="info-icon info-icon-text">@</div>
+              <div class="info-icon info-icon-text emoji">✉️</div>
               <div>
                 <div class="info-label">Email</div>
                 <div class="info-value">asharijaz.cs@gmail.com</div>
               </div>
             </div>
             <div class="info-item">
-              <div class="info-icon info-icon-text">AI</div>
+              <div class="info-icon info-icon-text emoji">🎯</div>
               <div>
-                <div class="info-label">Specialty</div>
-                <div class="info-value">AI-Assisted Dev</div>
+                <div class="info-label">Focus</div>
+                <div class="info-value">Full Stack Web Dev</div>
               </div>
             </div>
           </div>
@@ -232,137 +232,181 @@
       <div class="section-header reveal">
         <span class="section-tag">What I Know</span>
         <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
-        <p class="section-subtitle">Things I've picked up through projects, practice, and a lot of trial & error.</p>
+        <p class="section-subtitle">Technologies, frameworks, and developer tools I build with.</p>
         <div class="section-divider"></div>
       </div>
 
-      <!-- Skills Grid — JS will add reveal class dynamically -->
+      <!-- Skills Grid — Custom 4-Column Tech Stack Cards -->
       <div class="skills-grid">
 
-        <!-- Skill 1: AI-Assisted Development -->
+        <!-- Stack 1: Front-end Development -->
         <div class="skill-card">
-          <div class="skill-svg-icon">
-            <!-- Development cycle: circular arrows + code node -->
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="22" cy="22" r="9" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2"/>
-              <circle cx="22" cy="22" r="3" fill="currentColor" opacity="0.7"/>
-              <path d="M22 8 C28 8 34 13 35 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M35 25 C33 31 27 36 21 36" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M15 34 C9 31 7 24 8 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <polyline points="35,19 38,22 35,25" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
-              <polyline points="8,18 5,15 8,12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
-            </svg>
+          <div class="skill-head">
+            <div class="skill-svg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <div class="skill-name">Front-end Development</div>
           </div>
-          <div class="skill-name">AI-Assisted Development</div>
-          <div class="skill-desc">I use ChatGPT and Gemini while building projects — to understand what I'm writing, fix errors faster, and figure out the best way to structure things. It's how I get things done.</div>
-        </div>
-
-        <!-- Skill 2: HTML CSS JS -->
-        <div class="skill-card">
-          <div class="skill-svg-icon">
-            <!-- Code brackets + layers -->
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <polyline points="14,14 7,22 14,30" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <polyline points="30,14 37,22 30,30" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="26" y1="11" x2="18" y2="33" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-            </svg>
-          </div>
-          <div class="skill-name">HTML, CSS &amp; JavaScript</div>
-          <div class="skill-desc">I know HTML and CSS well enough to build and style pages properly. JavaScript I'm still getting comfortable with — but I can write basic logic and make things interactive.</div>
-        </div>
-
-        <!-- Skill 3: Website Creation -->
-        <div class="skill-card">
-          <div class="skill-svg-icon">
-            <!-- Browser wireframe layout -->
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="5" y="8" width="34" height="28" rx="3" stroke="currentColor" stroke-width="1.5"/>
-              <line x1="5" y1="15" x2="39" y2="15" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
-              <circle cx="10" cy="11.5" r="1.2" fill="currentColor" opacity="0.5"/>
-              <circle cx="15" cy="11.5" r="1.2" fill="currentColor" opacity="0.5"/>
-              <circle cx="20" cy="11.5" r="1.2" fill="currentColor" opacity="0.5"/>
-              <rect x="10" y="20" width="10" height="12" rx="1.5" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
-              <rect x="23" y="20" width="11" height="5" rx="1.5" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
-              <rect x="23" y="27" width="11" height="5" rx="1.5" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
-            </svg>
-          </div>
-          <div class="skill-name">Website Creation</div>
-          <div class="skill-desc">I've built websites from scratch — starting from a rough idea, planning the layout, writing the code, and making sure it works on mobile too. Still improving, but I can ship something real.</div>
-        </div>
-
-        <!-- Skill 4: E-commerce -->
-        <div class="skill-card">
-          <div class="skill-svg-icon">
-            <!-- Detailed e-commerce: storefront + cart + item -->
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 10 H10 L13 24 H34 L37 14 H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="16" y1="14" x2="15" y2="24" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="22" y1="14" x2="22" y2="24" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="28" y1="14" x2="29" y2="24" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <circle cx="16" cy="29" r="2.5" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="30" cy="29" r="2.5" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M5 7 H8 L10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="skill-name">E-commerce Store Setup</div>
-          <div class="skill-desc">Built a working online store with product listings, a cart that updates in real time, and a checkout page. Used HTML, CSS, JS and got help from AI to figure out the tricky parts.</div>
-        </div>
-
-        <!-- Skill 5: POS System -->
-        <div class="skill-card">
-          <div class="skill-svg-icon">
-            <!-- POS terminal: screen + keypad + receipt -->
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="5" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <line x1="8" y1="16" x2="28" y2="16" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <rect x="10" y="8" width="16" height="6" rx="1" stroke="currentColor" stroke-width="1" opacity="0.6"/>
-              <rect x="30" y="8" width="8" height="22" rx="1.5" stroke="currentColor" stroke-width="1.3" opacity="0.6"/>
-              <line x1="32" y1="12" x2="36" y2="12" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="32" y1="15" x2="36" y2="15" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="32" y1="18" x2="36" y2="18" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <path d="M10 23 L18 23 L18 38 L10 38 Z" stroke="currentColor" stroke-width="1.3" opacity="0.5"/>
-              <line x1="12" y1="27" x2="16" y2="27" stroke="currentColor" stroke-width="0.9" opacity="0.5"/>
-              <line x1="12" y1="30" x2="16" y2="30" stroke="currentColor" stroke-width="0.9" opacity="0.5"/>
-              <line x1="12" y1="33" x2="14" y2="33" stroke="currentColor" stroke-width="0.9" opacity="0.5"/>
-            </svg>
-          </div>
-          <div class="skill-name">POS Systems Development</div>
-          <div class="skill-desc">Built a POS system that records sales, tracks stock, stores customer info, and shows daily reports. Everything saves using local storage. It's my biggest project and it actually works.</div>
-        </div>
-
-        <!-- Skill 6: Tools & Productivity -->
-        <div class="skill-card">
-          <div class="skill-svg-icon">
-            <!-- Office/Tools visualization icon -->
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" />
-              <rect x="24" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" />
-              <rect x="8" y="24" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" />
-              <circle cx="30" cy="30" r="5" stroke="currentColor" stroke-width="1.5" />
-              <path d="M30 25 V28 M30 32 V35 M25 30 H28 M32 30 H35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="skill-name">Tools &amp; Productivity</div>
-          <div class="skill-desc">
-            Comfortable with Microsoft Office suite. I use Word for structuring university lab reports and Excel for managing tabular records, VLOOKUPs, and project tracking.
+          <div class="skill-desc-short">Building clean, responsive, and interactive user interfaces for web apps.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Bootstrap</span>
+            <span class="skill-tag">Responsive UI</span>
           </div>
         </div>
 
-        <!-- Skill 8: GitHub -->
+        <!-- Stack 2: Programming Languages -->
         <div class="skill-card">
-          <div class="skill-svg-icon">
-            <!-- Git branch network -->
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="10" r="3.5" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="12" cy="34" r="3.5" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="32" cy="18" r="3.5" stroke="currentColor" stroke-width="1.5"/>
-              <line x1="12" y1="13.5" x2="12" y2="30.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M12 16 C12 16 20 16 28 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
+          <div class="skill-head">
+            <div class="skill-svg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <div class="skill-name">Programming Languages</div>
           </div>
-          <div class="skill-name">GitHub &amp; Version Control</div>
-          <div class="skill-desc">I know the basics — creating repos, committing changes, and pushing code to GitHub. All my projects are on my GitHub profile. Still learning the more advanced stuff like branching.</div>
+          <div class="skill-desc-short">Academic foundation in Object-Oriented Programming and Data Structure basics.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">C++ (Basics)</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">OOP</span>
+            <span class="skill-tag">DSA </span>
+            <span class="skill-tag">Python</span>
+
+            
+          </div>
         </div>
+
+        <!-- Stack 3: Databases & Storage -->
+        <div class="skill-card">
+          <div class="skill-head">
+            <div class="skill-svg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+              </svg>
+            </div>
+            <div class="skill-name">Database </div>
+          </div>
+          <div class="skill-desc-short">Structuring database tables, managing records, and writing SQL queries.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">SQLite</span>
+          </div>
+        </div>
+
+ <!-- Stack 4: AI-Assisted Workflows -->
+        <div class="skill-card">
+          <div class="skill-head">
+            <div class="skill-svg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+              </svg>
+            </div>
+            <div class="skill-name">AI-Assisted Workflows</div>
+          </div>
+          <div class="skill-desc-short">Using modern AI tools as a smart coding assistant to debug faster and understand complex logic.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">ChatGPT</span>
+            <span class="skill-tag">Gemini</span>
+            <span class="skill-tag">Claude</span>
+            <span class="skill-tag">Faster Debugging</span>
+            <!--span class="skill-tag">Smart Problem Solving</span-->
+            
+          </div>
+        </div>
+
+<!-- Stack 5: Client Software & POS -->
+        <div class="skill-card">
+          <div class="skill-head">
+            <div class="skill-svg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <rect x="2" y="4" width="20" height="12" rx="2"/>
+                <path d="M6 20h12"/>
+                <path d="M12 16v4"/>
+              </svg>
+            </div>
+            <div class="skill-name">POS Software</div>
+          </div>
+          <div class="skill-desc-short">Developing custom Point of Sale systems in Java with sales reports &amp; stock management.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">POS Systems</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Inventory Tracking</span>
+            <span class="skill-tag">Sales Reports</span>
+          </div>
+        </div>
+
+        <!-- Stack 6: E-commerce Stores -->
+        <div class="skill-card">
+          <div class="skill-head">
+            <div class="skill-svg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
+            </div>
+            <div class="skill-name">E-commerce Stores</div>
+          </div>
+          <div class="skill-desc-short">Setting up online stores easily on Shopify, while learning custom e-commerce web code.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Shopify</span>
+            <span class="skill-tag">Store Setup</span>
+            <span class="skill-tag">Custom Web Code</span>
+          </div>
+        </div>
+
+        <!-- Stack 7: Tools & Workflow -->
+        <div class="skill-card">
+          <div class="skill-head">
+            <div class="skill-svg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <div class="skill-name">Tools &amp; Workflow</div>
+          </div>
+          <div class="skill-desc-short">Version control, code editors, project tracking, and Microsoft Office tools.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Git &amp; GitHub</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">MS Office Apps</span>
+          </div>
+        </div>
+
+        <!-- Stack 8: Focus & Goals -->
+        <div class="skill-card">
+          <div class="skill-head">
+            <div class="skill-svg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
+            <div class="skill-name">Focus & Goals</div>
+          </div>
+          <div class="skill-desc-short">Expanding into full stack web development and continuously learning new technologies.</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Full Stack Web Dev</span>
+            <span class="skill-tag">Learning New Tech</span>
+            <span class="skill-tag">Problem Solving</span>
+          </div>
+        </div>
+
+        
+
+       
 
       </div>
     </div>
@@ -376,7 +420,7 @@
       <div class="section-header reveal">
         <span class="section-tag">What I've Built</span>
         <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
-        <p class="section-subtitle">Things I've built so far — not perfect, but real and functional.</p>
+        <p class="section-subtitle">Real-world projects and practical software applications I've built so far.</p>
         <div class="section-divider"></div>
       </div>
 
@@ -387,7 +431,7 @@
         <div class="project-card">
           <!-- Real UI Screenshot -->
           <div class="project-thumb project-thumb-screenshot">
-            <img src="dashboard.png" alt="Smart POS System UI" class="project-screenshot" />
+            <img src="dashboard.png" alt="Smart POS System UI" class="project-screenshot pos-thumb-img" />
             <div class="project-thumb-overlay">
               <span class="project-type-label">POS System</span>
             </div>
@@ -395,8 +439,9 @@
           <div class="project-body">
             <span class="project-badge">Project 01</span>
             <h3 class="project-title">Smart POS System</h3>
+            <div class="project-tech-line">JAVA · SQLITE · DESKTOP GUI</div>
             <p class="project-desc">
-              CrownMill POS is a fully-featured, desktop-based Point of Sale application built with Java and SQLite. It is designed to streamline retail store operations, offering an intuitive UI with a sleek dark theme (Black & Gold).
+              Desktop Point of Sale software built with Java and SQLite for managing store inventory, sales billing, and customer records.
             </p>
             <div class="project-tags">
               <span class="project-tag">Java</span>
@@ -405,8 +450,8 @@
               <span class="project-tag">Point of Sale</span>
             </div>
             <div class="project-links">
-              <!-- <a href="#" class="project-btn primary">View Project →</a> -->
-              <a href="https://github.com/asharijaz328-cmd/CrownMill-POS" target="_blank" class="project-btn primary">GitHub Repo</a>
+              <a href="https://www.linkedin.com/in/ashar-ijaz-672505399" target="_blank" class="project-btn primary">View Project →</a>
+              <a href="https://github.com/asharijaz328-cmd/CrownMill-POS" target="_blank" class="project-btn">GitHub</a>
             </div>
           </div>
         </div>
@@ -423,14 +468,15 @@
           <div class="project-body">
             <span class="project-badge">Project 02</span>
             <h3 class="project-title">E-commerce Store</h3>
+            <div class="project-tech-line">HTML5 · CSS3 · JAVASCRIPT · FIREBASE</div>
             <p class="project-desc">
-              A premium e-commerce web application built with React and Tailwind CSS. Features smooth Framer Motion animations, a dynamic shopping cart, real-time Firebase database integration, and a highly secure authenticated Admin Panel for order management.
+              Modern online store with product catalog, dynamic shopping cart, real-time database, and an interactive admin dashboard.
             </p>
             <div class="project-tags">
-              <span class="project-tag">React.js</span>
-              <span class="project-tag">Tailwind CSS</span>
+              <span class="project-tag">HTML5 / CSS3</span>
+              <span class="project-tag">JavaScript</span>
               <span class="project-tag">Firebase</span>
-              <span class="project-tag">Framer Motion</span>
+              <span class="project-tag">Admin Panel</span>
             </div>
             <div class="project-links">
               <a href="https://crownmill.pk" target="_blank" class="project-btn primary">View Project →</a>
@@ -443,7 +489,7 @@
         <div class="project-card">
           <!-- Wireframe mockup screenshot -->
           <div class="project-thumb project-thumb-screenshot">
-            <img src="portfolio-ui.png" alt="Portfolio Website UI" class="project-screenshot" />
+            <img src="port.jpeg " alt="Portfolio Website UI" class="project-screenshot" />
             <div class="project-thumb-overlay">
               <span class="project-type-label">Portfolio</span>
             </div>
@@ -451,18 +497,48 @@
           <div class="project-body">
             <span class="project-badge">Project 03</span>
             <h3 class="project-title">Portfolio Website</h3>
+            <div class="project-tech-line">HTML5 · CSS3 · JAVASCRIPT</div>
             <p class="project-desc">
-              This website — built from a wireframe mockup to a fully responsive dark-themed portfolio. Includes scroll animations, glassmorphism cards, a typing effect hero, and a working contact form.
+              Responsive dark-themed personal portfolio with smooth scroll animations, interactive cards, and a working contact form.
             </p>
             <div class="project-tags">
-              <span class="project-tag">HTML5 / CSS3</span>
-              <span class="project-tag">Vanilla JS</span>
-              <span class="project-tag">Intersection Observer</span>
+              <span class="project-tag">HTML5</span>
+              <span class="project-tag">CSS3</span>
+              <span class="project-tag">JavaScript</span>
               <span class="project-tag">Responsive Design</span>
             </div>
             <div class="project-links">
               <a href="#" class="project-btn primary">You're Here →</a>
               <a href="https://github.com/asharijaz328-cmd" class="project-btn">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Azam Traders POS -->
+        <div class="project-card">
+          <!-- Real UI Screenshot -->
+          <div class="project-thumb project-thumb-screenshot">
+            <img src="azam-pos.png" alt="Azam Traders POS UI" class="project-screenshot pos-thumb-img" />
+            <div class="project-thumb-overlay">
+              <span class="project-type-label">Client POS System</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-badge">Project 04</span>
+            <h3 class="project-title">Azam Traders POS</h3>
+            <div class="project-tech-line">JAVA · JAVA SWING · SQLITE</div>
+            <p class="project-desc">
+              Client POS desktop application for a battery store, featuring stock inventory, warranty tracking &amp; claims, sales receipts, and analytics.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Java</span>
+              <span class="project-tag">Java Swing</span>
+              <span class="project-tag">SQLite</span>
+              <span class="project-tag">Warranty Tracking</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.linkedin.com/posts/activity-7482032517353578497-9eQ_?utm_source=share&utm_medium=member_android&rcm=ACoAAGHI8XYBgzudhwqD7bnmJvQ_SeiEhUXBsGA" target="_blank" class="project-btn primary">View Project →</a>
+              <a href="https://github.com/asharijaz328-cmd/Azam-Traders" target="_blank" class="project-btn">GitHub</a>
             </div>
           </div>
         </div>
@@ -489,7 +565,7 @@
         <div class="contact-info-card reveal-left">
           <h3 class="contact-info-title">Say Hi</h3>
           <p class="contact-info-desc">
-            Whether you have a project idea, a question, or just want to connect — feel free to message me. I'm a student so I might be slow sometimes, but I'll definitely reply!
+            Whether you need a custom website, e-commerce store, or POS software built  or you're looking to hire an intern for your team. I'm open for freelance projects, internships, and collaborations. Feel free to reach out anytime!
           </p>
 
           <!-- Email -->
@@ -518,7 +594,7 @@
             </div>
             <div>
               <div class="contact-detail-label">University</div>
-              <div class="contact-detail-value">KFUEIT — 5th Semester</div>
+              <div class="contact-detail-value">Khwaja Fareed UEIT (KFUEIT) — 5th Sem</div>
             </div>
           </div>
 
@@ -642,7 +718,7 @@
         <div>
           <div class="footer-brand-name">Ashar Ijaz</div>
           <p class="footer-brand-desc">
-            A passionate CS student building digital solutions using AI-assisted tools. Always learning, always creating.
+            Computer Science undergraduate at KFUEIT building web applications and client software.
           </p>
           <div class="footer-social-row">
             <a href="https://github.com/asharijaz328-cmd" class="footer-social-btn">
