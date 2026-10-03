@@ -10,7 +10,7 @@ Welcome to the official developer portfolio repository of **Ashar Ijaz**, Comput
 - 🎓 **Education:** BS Computer Science (5th Semester) @ KFUEIT
 - 💻 **Focus:** Front-end Web Development, Desktop POS Applications in Java, E-commerce Stores
 - ✉️ **Email:** [asharijaz.cs@gmail.com](mailto:asharijaz.cs@gmail.com)
-- 💼 **LinkedIn:** [Ashar Ijaz](https://www.linkedin.com/in/ashar-ijaz-672505399)
+- 💼 **LinkedIn:** [Ashar Ijaz](https://www.linkedin.com/in/ashar-ijaz)
 - 🐙 **GitHub:** [@asharijaz328-cmd](https://github.com/asharijaz328-cmd)
 
 ---
@@ -35,7 +35,7 @@ Welcome to the official developer portfolio repository of **Ashar Ijaz**, Comput
 ### 2. 🛒 Smart POS System
 - **Tech Stack:** `Java` · `SQLite` · `Desktop GUI`
 - **Description:** Point of Sale software for retail store inventory management, billing, and customer record tracking.
-- **Links:** [LinkedIn Profile](https://www.linkedin.com/in/ashar-ijaz-672505399) · [GitHub Repository](https://github.com/asharijaz328-cmd/CrownMill-POS)
+- **Links:** [LinkedIn Profile](https://www.linkedin.com/in/ashar-ijaz) · [GitHub Repository](https://github.com/asharijaz328-cmd/CrownMill-POS)
 
 ### 3. 🛍️ E-commerce Store
 - **Tech Stack:** `HTML5` · `CSS3` · `JavaScript` · `Firebase`
@@ -51,4 +51,4 @@ Welcome to the official developer portfolio repository of **Ashar Ijaz**, Comput
 
 ## 📬 Contact & Connect
 
-If you'd like to collaborate on a project or discuss job opportunities, feel free to reach out via [Email](mailto:asharijaz.cs@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/ashar-ijaz-672505399).
+If you'd like to collaborate on a project or discuss job opportunities, feel free to reach out via [Email](mailto:asharijaz.cs@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/ashar-ijaz).
