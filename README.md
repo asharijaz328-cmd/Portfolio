@@ -2,7 +2,7 @@
 
 Welcome to the official developer portfolio repository of **Ashar Ijaz**, Computer Science Undergraduate at Khwaja Fareed University of Engineering & Information Technology (KFUEIT).
 
-![Portfolio Website](port.jpeg)
+![Portfolio Website](assets/images/port.jpeg)
 
 ---
 
