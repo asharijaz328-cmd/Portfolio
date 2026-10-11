@@ -1025,9 +1025,9 @@ body {
   margin-bottom: 4px;
 }
 .project-tech-line {
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   color: var(--accent-cyan);
   margin-bottom: 12px;
@@ -1038,14 +1038,14 @@ body {
   color: var(--text-secondary);
   margin-bottom: 20px;
   line-height: 1.6;
-  flex: 1;
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-top: auto;
+  margin-bottom: 20px;
 }
 .project-tag {
   font-size: 0.72rem;
