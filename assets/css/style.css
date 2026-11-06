@@ -996,38 +996,94 @@ img {
 
 .project-thumb {
   position: relative;
-  background: #0E0E0E;
-  height: 220px;
+  background: #000000;
+  height: 260px;
   overflow: hidden;
   border-bottom: 1px solid var(--border-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-window-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  background: #121216;
+  border-bottom: 1px solid var(--border-card);
+  height: 30px;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.window-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.window-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.window-dots .dot-red { background: #FF5F56; }
+.window-dots .dot-yellow { background: #FFBD2E; }
+.window-dots .dot-green { background: #27C93F; }
+
+.window-address {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
 }
 
 .project-screenshot {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 30px);
   object-fit: cover;
-  object-position: top;
-  transition: transform 0.3s ease;
+  object-position: top center;
+  transition: object-position 3.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.4s ease;
+  display: block;
+  background: #000000;
 }
+
 .project-card:hover .project-screenshot {
-  transform: scale(1.02);
+  object-position: bottom center;
 }
 
-.project-thumb-overlay {
-  position: absolute;
-  top: 14px;
-  left: 14px;
+.project-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.project-type-label {
-  background: rgba(10, 10, 10, 0.85);
-  border: 1px solid var(--border-card);
-  color: var(--accent-green);
+.project-badge {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-theme);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+.project-type-tag {
+  font-family: var(--font-body);
   font-size: 0.72rem;
   font-weight: 600;
-  padding: 4px 10px;
+  color: var(--text-secondary);
+  background: #18181C;
+  border: 1px solid var(--border-card);
+  padding: 3px 10px;
   border-radius: 4px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
 .project-body {
@@ -1035,17 +1091,6 @@ img {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-}
-
-.project-badge {
-  font-family: var(--font-heading);
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--accent-green);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  display: inline-block;
 }
 
 .project-title {
@@ -1872,7 +1917,7 @@ textarea.form-input {
     gap: 20px;
   }
   .project-thumb {
-    height: 180px;
+    height: 230px;
   }
   .project-body {
     padding: 18px;
