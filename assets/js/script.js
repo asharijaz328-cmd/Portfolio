@@ -298,11 +298,34 @@ document.addEventListener('DOMContentLoaded', () => {
   document.head.appendChild(toastStyle);
 
   // ============================================
-  // 12. DYNAMIC COPYRIGHT YEAR
+  // 13. LIVE ACCENT THEME SWITCHER
+  // Supports: green, white, violet, blue
   // ============================================
-  const yearEl = document.getElementById('current-year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
+  const themeDots = document.querySelectorAll('.theme-dot');
+  const currentSavedTheme = localStorage.getItem('portfolio-accent-theme') || 'green';
+  setTheme(currentSavedTheme);
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('portfolio-accent-theme', theme);
+
+    // Sync active state across all theme switcher instances (desktop & mobile)
+    themeDots.forEach(dot => {
+      if (dot.getAttribute('data-theme') === theme) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
   }
+
+  themeDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const selected = dot.getAttribute('data-theme');
+      if (selected) {
+        setTheme(selected);
+      }
+    });
+  });
 
 });

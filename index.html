@@ -74,11 +74,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=5.0" />
+  <link rel="stylesheet" href="assets/css/style.css?v=5.1" />
 
   <!-- Favicon & Apple Touch Icon -->
   <link rel="apple-touch-icon" href="https://asharijaz328-cmd.github.io/Portfolio/assets/images/avatar.jpg" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
+  <!-- Theme Init Script (Zero-flicker on reload) -->
+  <script>
+    (function() {
+      var savedTheme = localStorage.getItem('portfolio-accent-theme') || 'green';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
 </head>
 <body>
 
@@ -100,11 +107,21 @@
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
 
-      <!-- Hamburger Toggle (Mobile) -->
-      <div class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <!-- Theme Switcher & Actions -->
+      <div class="nav-actions">
+        <div class="theme-switcher" title="Choose Accent Theme">
+          <button type="button" class="theme-dot active" data-theme="green" title="Soft Green" style="--dot-color: #7ED491;"></button>
+          <button type="button" class="theme-dot" data-theme="white" title="Pure Monochrome" style="--dot-color: #FFFFFF;"></button>
+          <button type="button" class="theme-dot" data-theme="violet" title="Electric Violet" style="--dot-color: #818CF8;"></button>
+          <button type="button" class="theme-dot" data-theme="blue" title="Ice Sky Blue" style="--dot-color: #38BDF8;"></button>
+        </div>
+
+        <!-- Hamburger Toggle (Mobile) -->
+        <div class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
   </nav>
@@ -117,6 +134,16 @@
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
+
+    <div class="mobile-theme-box">
+      <span class="mobile-theme-title">Choose Accent Theme</span>
+      <div class="theme-switcher">
+        <button type="button" class="theme-dot active" data-theme="green" title="Soft Green" style="--dot-color: #7ED491;"></button>
+        <button type="button" class="theme-dot" data-theme="white" title="Pure Monochrome" style="--dot-color: #FFFFFF;"></button>
+        <button type="button" class="theme-dot" data-theme="violet" title="Electric Violet" style="--dot-color: #818CF8;"></button>
+        <button type="button" class="theme-dot" data-theme="blue" title="Ice Sky Blue" style="--dot-color: #38BDF8;"></button>
+      </div>
+    </div>
   </nav>
 
   <!-- ============================================
@@ -1145,7 +1172,7 @@
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
   <!-- JavaScript -->
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js?v=5.1"></script>
 
 </body>
 </html>
