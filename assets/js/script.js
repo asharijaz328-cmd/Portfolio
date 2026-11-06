@@ -339,17 +339,17 @@ document.addEventListener('DOMContentLoaded', () => {
   setTheme(currentSavedTheme);
 
   const themeColors = {
-    emerald: '#7ED491',
-    ocean: '#38BDF8',
-    violet: '#818CF8',
-    rose: '#FB7185',
-    amber: '#F59E0B',
-    monochrome: '#FFFFFF'
+    emerald: { main: '#7ED491', hover: '#6bc77f', subtle: 'rgba(126, 212, 145, 0.12)', border: 'rgba(126, 212, 145, 0.35)' },
+    ocean: { main: '#38BDF8', hover: '#0EA5E9', subtle: 'rgba(56, 189, 248, 0.14)', border: 'rgba(56, 189, 248, 0.4)' },
+    violet: { main: '#818CF8', hover: '#6366F1', subtle: 'rgba(129, 140, 248, 0.14)', border: 'rgba(129, 140, 248, 0.4)' },
+    rose: { main: '#FB7185', hover: '#E11D48', subtle: 'rgba(251, 113, 133, 0.14)', border: 'rgba(251, 113, 133, 0.4)' },
+    amber: { main: '#F59E0B', hover: '#D97706', subtle: 'rgba(245, 158, 11, 0.14)', border: 'rgba(245, 158, 11, 0.4)' },
+    monochrome: { main: '#FFFFFF', hover: '#E4E4E7', subtle: 'rgba(255, 255, 255, 0.12)', border: 'rgba(255, 255, 255, 0.35)' }
   };
 
   function updateFavicon(theme) {
-    const color = themeColors[theme] || '#7ED491';
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#0A0A0C"/><rect x="1" y="1" width="62" height="62" rx="15" fill="none" stroke="#2E2E36" stroke-width="2"/><text x="31" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-1.5">AI</text><circle cx="50" cy="20" r="4.5" fill="${color}"/></svg>`;
+    const c = themeColors[theme] || themeColors.emerald;
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#0A0A0C"/><rect x="1" y="1" width="62" height="62" rx="15" fill="none" stroke="#2E2E36" stroke-width="2"/><text x="31" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-1.5">AI</text><circle cx="50" cy="20" r="4.5" fill="${c.main}"/></svg>`;
     const favicon = document.querySelector("link[rel*='icon']");
     if (favicon) {
       favicon.href = 'data:image/svg+xml,' + encodeURIComponent(svg);
@@ -357,14 +357,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function setTheme(theme) {
+    if (!theme) return;
+    const c = themeColors[theme] || themeColors.emerald;
+
+    // 1. Set data-theme on html & body
     document.documentElement.setAttribute('data-theme', theme);
+    if (document.body) document.body.setAttribute('data-theme', theme);
+
+    // 2. Set inline CSS variables directly on root element (guarantees instantaneous live color update)
+    const rootStyle = document.documentElement.style;
+    rootStyle.setProperty('--accent-theme', c.main);
+    rootStyle.setProperty('--accent-theme-hover', c.hover);
+    rootStyle.setProperty('--accent-theme-subtle', c.subtle);
+    rootStyle.setProperty('--accent-theme-border', c.border);
+    rootStyle.setProperty('--accent-green', c.main);
+    rootStyle.setProperty('--accent-green-hover', c.hover);
+    rootStyle.setProperty('--accent-green-subtle', c.subtle);
+    rootStyle.setProperty('--accent-green-border', c.border);
+
+    // 3. Save to localStorage
     localStorage.setItem('portfolio-accent-theme', theme);
+
+    // 4. Update Favicon dot
     updateFavicon(theme);
 
-    // Sync active state and checkmarks across all instances (desktop & mobile)
+    // 5. Sync active state and checkmarks across buttons
     themeOptions.forEach(opt => {
       const optTheme = opt.getAttribute('data-theme');
-      if (optTheme === theme || (theme === 'green' && optTheme === 'emerald') || (theme === 'blue' && optTheme === 'ocean') || (theme === 'white' && optTheme === 'monochrome')) {
+      if (optTheme === theme) {
         opt.classList.add('active');
       } else {
         opt.classList.remove('active');
@@ -373,14 +393,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   themeOptions.forEach(opt => {
-    opt.addEventListener('click', () => {
+    opt.addEventListener('click', (e) => {
+      e.preventDefault();
       const selected = opt.getAttribute('data-theme');
       if (selected) {
         setTheme(selected);
         // Close dropdown after selection
         setTimeout(() => {
           if (themeWrap) themeWrap.classList.remove('open');
-        }, 150);
+        }, 120);
       }
     });
   });

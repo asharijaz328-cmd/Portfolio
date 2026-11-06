@@ -11,53 +11,86 @@
 /* --- Dynamic Accent Color Themes --- */
 :root,
 [data-theme="emerald"],
-[data-theme="green"] {
+html[data-theme="emerald"],
+[data-theme="green"],
+html[data-theme="green"] {
   --accent-theme: #7ED491;
   --accent-theme-hover: #6bc77f;
   --accent-theme-subtle: rgba(126, 212, 145, 0.12);
   --accent-theme-border: rgba(126, 212, 145, 0.35);
+  --accent-green: #7ED491;
+  --accent-green-hover: #6bc77f;
+  --accent-green-subtle: rgba(126, 212, 145, 0.12);
+  --accent-green-border: rgba(126, 212, 145, 0.35);
   --btn-theme-text: #0A0A0A;
 }
 
 [data-theme="ocean"],
-[data-theme="blue"] {
+html[data-theme="ocean"],
+[data-theme="blue"],
+html[data-theme="blue"] {
   --accent-theme: #38BDF8;
   --accent-theme-hover: #0EA5E9;
   --accent-theme-subtle: rgba(56, 189, 248, 0.14);
   --accent-theme-border: rgba(56, 189, 248, 0.4);
+  --accent-green: #38BDF8;
+  --accent-green-hover: #0EA5E9;
+  --accent-green-subtle: rgba(56, 189, 248, 0.14);
+  --accent-green-border: rgba(56, 189, 248, 0.4);
   --btn-theme-text: #0A0A0A;
 }
 
-[data-theme="violet"] {
+[data-theme="violet"],
+html[data-theme="violet"] {
   --accent-theme: #818CF8;
   --accent-theme-hover: #6366F1;
   --accent-theme-subtle: rgba(129, 140, 248, 0.14);
   --accent-theme-border: rgba(129, 140, 248, 0.4);
+  --accent-green: #818CF8;
+  --accent-green-hover: #6366F1;
+  --accent-green-subtle: rgba(129, 140, 248, 0.14);
+  --accent-green-border: rgba(129, 140, 248, 0.4);
   --btn-theme-text: #0A0A0A;
 }
 
-[data-theme="rose"] {
+[data-theme="rose"],
+html[data-theme="rose"] {
   --accent-theme: #FB7185;
   --accent-theme-hover: #E11D48;
   --accent-theme-subtle: rgba(251, 113, 133, 0.14);
   --accent-theme-border: rgba(251, 113, 133, 0.4);
+  --accent-green: #FB7185;
+  --accent-green-hover: #E11D48;
+  --accent-green-subtle: rgba(251, 113, 133, 0.14);
+  --accent-green-border: rgba(251, 113, 133, 0.4);
   --btn-theme-text: #0A0A0A;
 }
 
-[data-theme="amber"] {
+[data-theme="amber"],
+html[data-theme="amber"] {
   --accent-theme: #F59E0B;
   --accent-theme-hover: #D97706;
   --accent-theme-subtle: rgba(245, 158, 11, 0.14);
   --accent-theme-border: rgba(245, 158, 11, 0.4);
+  --accent-green: #F59E0B;
+  --accent-green-hover: #D97706;
+  --accent-green-subtle: rgba(245, 158, 11, 0.14);
+  --accent-green-border: rgba(245, 158, 11, 0.4);
   --btn-theme-text: #0A0A0A;
 }
 
 [data-theme="monochrome"],
-[data-theme="white"] {
+html[data-theme="monochrome"],
+[data-theme="white"],
+html[data-theme="white"] {
   --accent-theme: #FFFFFF;
   --accent-theme-hover: #E4E4E7;
   --accent-theme-subtle: rgba(255, 255, 255, 0.12);
   --accent-theme-border: rgba(255, 255, 255, 0.35);
+  --accent-green: #FFFFFF;
+  --accent-green-hover: #E4E4E7;
+  --accent-green-subtle: rgba(255, 255, 255, 0.12);
+  --accent-green-border: rgba(255, 255, 255, 0.35);
   --btn-theme-text: #0A0A0A;
 }
 

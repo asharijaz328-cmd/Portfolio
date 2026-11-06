@@ -74,7 +74,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=6.0" />
+  <link rel="stylesheet" href="assets/css/style.css?v=6.1" />
 
   <!-- Favicon & Apple Touch Icon -->
   <link rel="apple-touch-icon" href="assets/images/favicon.svg" />
@@ -84,6 +84,24 @@
     (function() {
       var savedTheme = localStorage.getItem('portfolio-accent-theme') || 'emerald';
       document.documentElement.setAttribute('data-theme', savedTheme);
+      var colors = {
+        emerald: { m: '#7ED491', h: '#6bc77f', s: 'rgba(126,212,145,0.12)', b: 'rgba(126,212,145,0.35)' },
+        ocean: { m: '#38BDF8', h: '#0EA5E9', s: 'rgba(56,189,248,0.14)', b: 'rgba(56,189,248,0.4)' },
+        violet: { m: '#818CF8', h: '#6366F1', s: 'rgba(129,140,248,0.14)', b: 'rgba(129,140,248,0.4)' },
+        rose: { m: '#FB7185', h: '#E11D48', s: 'rgba(251,113,133,0.14)', b: 'rgba(251,113,133,0.4)' },
+        amber: { m: '#F59E0B', h: '#D97706', s: 'rgba(245,158,11,0.14)', b: 'rgba(245,158,11,0.4)' },
+        monochrome: { m: '#FFFFFF', h: '#E4E4E7', s: 'rgba(255,255,255,0.12)', b: 'rgba(255,255,255,0.35)' }
+      };
+      var c = colors[savedTheme] || colors.emerald;
+      var s = document.documentElement.style;
+      s.setProperty('--accent-theme', c.m);
+      s.setProperty('--accent-theme-hover', c.h);
+      s.setProperty('--accent-theme-subtle', c.s);
+      s.setProperty('--accent-theme-border', c.b);
+      s.setProperty('--accent-green', c.m);
+      s.setProperty('--accent-green-hover', c.h);
+      s.setProperty('--accent-green-subtle', c.s);
+      s.setProperty('--accent-green-border', c.b);
     })();
   </script>
 </head>
@@ -1278,7 +1296,7 @@
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
   <!-- JavaScript -->
-  <script src="assets/js/script.js?v=6.0"></script>
+  <script src="assets/js/script.js?v=6.1"></script>
 
 </body>
 </html>
