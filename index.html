@@ -70,11 +70,11 @@
 
   <title>Ashar Ijaz | Portfolio</title>
 
-  <!-- Google Fonts: Plus Jakarta Sans + Playfair Display for Editorial Luxury -->
+  <!-- Google Fonts: Space Grotesk (Headings) + Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=3.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=5.0" />
 
   <!-- Favicon & Apple Touch Icon -->
   <link rel="apple-touch-icon" href="https://asharijaz328-cmd.github.io/Portfolio/assets/images/avatar.jpg" />
@@ -92,6 +92,7 @@
 
       <!-- Desktop Navigation Links -->
       <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -122,14 +123,6 @@
        HERO SECTION
        ============================================ -->
   <section id="hero">
-    <!-- Animated Background -->
-    <div class="hero-bg">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-    </div>
-    <div class="hero-grid"></div>
-
     <div class="container">
       <div class="hero-content">
 
@@ -137,12 +130,12 @@
         <div class="hero-text">
           <div class="hero-greeting">
             <span class="dot"></span>
-            Open to Learning & Projects
+            Open to Learning &amp; Projects
           </div>
 
           <h1 class="hero-name">
             Hi, I'm<br>
-            <span class="gradient-text">Ashar Ijaz</span>
+            Ashar Ijaz
           </h1>
 
           <!-- Typing animation -->
@@ -156,11 +149,17 @@
 
           <!-- CTA Buttons -->
           <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">
-              View My Projects
+            <a href="#projects" class="btn btn-dark">
+              View Projects &gt;
             </a>
-            <a href="assets/docs/ashar_cv.pdf" class="btn btn-outline download-cv" download>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+            <a href="#contact" class="btn btn-outline-green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              Contact Me
+            </a>
+            <a href="assets/docs/ashar_cv.pdf" class="btn btn-dark download-cv" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                 <polyline points="7 10 12 15 17 10"/>
                 <line x1="12" y1="15" x2="12" y2="3"/>
@@ -172,15 +171,15 @@
           <!-- Quick Stats -->
           <div class="hero-stats">
             <div class="stat-item">
-              <div class="stat-number" data-count="4" data-suffix="+">0+</div>
+              <div class="stat-number" data-count="4" data-suffix="+">4+</div>
               <div class="stat-label">Projects Built</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number" data-count="5" data-suffix="th">0th</div>
+              <div class="stat-number" data-count="5" data-suffix="th">5th</div>
               <div class="stat-label">Semester</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number" data-count="8" data-suffix="+">0+</div>
+              <div class="stat-number" data-count="8" data-suffix="+">8+</div>
               <div class="stat-label">Skills</div>
             </div>
           </div>
@@ -195,7 +194,7 @@
                 <img src="assets/images/avatar.jpg" alt="Ashar Ijaz" class="avatar-photo" />
               </div>
               <div class="hero-card-role">Computer Science Student<br>Web Developer</div>
-              <div class="hero-card-uni">🎓 KFUEIT - 5th Semester</div>
+              <div class="hero-card-uni">🎓 KFUEIT — 5th Semester</div>
             </div>
           </div>
         </div>
@@ -210,9 +209,8 @@
   <section id="about" class="section-padding">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">Get to Know Me</span>
-        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
-        <div class="section-divider"></div>
+        <span class="section-tag">ABOUT</span>
+        <h2 class="section-title">About Me</h2>
       </div>
 
       <div class="about-grid">
@@ -306,10 +304,9 @@
   <section id="skills" class="section-padding">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">What I Know</span>
-        <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+        <span class="section-tag">SKILLS</span>
+        <h2 class="section-title">Technologies I Work With</h2>
         <p class="section-subtitle">Technologies, frameworks and developer tools I build with.</p>
-        <div class="section-divider"></div>
       </div>
 
       <!-- Skills Grid — Custom 4-Column Tech Stack Cards -->
@@ -453,10 +450,9 @@
   <section id="projects" class="section-padding">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">What I've Built</span>
-        <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+        <span class="section-tag">PROJECTS</span>
+        <h2 class="section-title">Featured Projects</h2>
         <p class="section-subtitle">A showcase of client work, web apps and software I've developed.</p>
-        <div class="section-divider"></div>
       </div>
 
       <!-- Projects Grid — JS adds reveal dynamically -->
@@ -589,10 +585,9 @@
   <section id="experience" class="section-padding">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">Career &amp; Journey</span>
-        <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+        <span class="section-tag">EXPERIENCE</span>
+        <h2 class="section-title">Work Experience</h2>
         <p class="section-subtitle">Real projects, practical experience and custom client software I’ve built.</p>
-        <div class="section-divider"></div>
       </div>
 
       <div class="experience-timeline">
@@ -911,10 +906,9 @@
   <section id="contact" class="section-padding">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">Let's Connect</span>
-        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+        <span class="section-tag">CONTACT</span>
+        <h2 class="section-title">Let's Work Together</h2>
         <p class="section-subtitle">Have a project in mind or just want to connect? Drop me a message.</p>
-        <div class="section-divider"></div>
       </div>
 
       <div class="contact-grid">
@@ -925,6 +919,17 @@
           <p class="contact-info-desc">
             Need a custom website, e-commerce store, or POS software built? Or maybe you're looking to hire an intern for your team? I'm open to freelance projects, internships and collaborations. Feel free to reach out anytime!
           </p>
+
+          <!-- WhatsApp Button (matching reference) -->
+          <div class="contact-whatsapp-box">
+            <a href="https://wa.me/923287042571" target="_blank" class="btn btn-whatsapp">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.477-.15-.678.15-.2.301-.778.978-.954 1.179-.176.2-.351.226-.652.075s-1.272-.469-2.423-1.496c-.896-.799-1.501-1.786-1.677-2.087-.176-.301-.019-.464.132-.614.136-.135.301-.351.452-.527.15-.176.2-.301.301-.502.101-.2.05-.376-.025-.527s-.678-1.631-.929-2.233c-.245-.587-.494-.507-.678-.517-.176-.009-.376-.011-.577-.011s-.527.075-.803.376c-.276.301-1.054 1.029-1.054 2.508 0 1.479 1.079 2.906 1.229 3.107.15.201 2.123 3.242 5.143 4.547.718.311 1.279.497 1.716.636.721.229 1.377.197 1.896.119.579-.087 1.78-.727 2.031-1.429.251-.702.251-1.304.176-1.429-.075-.125-.276-.201-.577-.351z"/>
+                <path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.954.563 3.778 1.536 5.324L2 22l4.81-1.492c1.488.892 3.228 1.406 5.194 1.406 5.518 0 10.004-4.486 10.004-10.004C22.008 6.486 17.522 2 12.004 2zm0 18.232c-1.737 0-3.351-.518-4.708-1.409l-.337-.22-2.853.885.897-2.775-.241-.356c-.99-1.464-1.528-3.2-1.528-5.011 0-4.834 3.936-8.77 8.77-8.77 4.834 0 8.77 3.936 8.77 8.77 0 4.834-3.936 8.77-8.77 8.77z"/>
+              </svg>
+              Chat on WhatsApp
+            </a>
+          </div>
 
           <!-- Email -->
           <div class="contact-detail">
