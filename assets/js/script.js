@@ -338,9 +338,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentSavedTheme = localStorage.getItem('portfolio-accent-theme') || 'emerald';
   setTheme(currentSavedTheme);
 
+  const themeColors = {
+    emerald: '#7ED491',
+    ocean: '#38BDF8',
+    violet: '#818CF8',
+    rose: '#FB7185',
+    amber: '#F59E0B',
+    monochrome: '#FFFFFF'
+  };
+
+  function updateFavicon(theme) {
+    const color = themeColors[theme] || '#7ED491';
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#0A0A0C"/><rect x="1" y="1" width="62" height="62" rx="15" fill="none" stroke="#2E2E36" stroke-width="2"/><text x="31" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-1.5">AI</text><circle cx="50" cy="20" r="4.5" fill="${color}"/></svg>`;
+    const favicon = document.querySelector("link[rel*='icon']");
+    if (favicon) {
+      favicon.href = 'data:image/svg+xml,' + encodeURIComponent(svg);
+    }
+  }
+
   function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('portfolio-accent-theme', theme);
+    updateFavicon(theme);
 
     // Sync active state and checkmarks across all instances (desktop & mobile)
     themeOptions.forEach(opt => {
