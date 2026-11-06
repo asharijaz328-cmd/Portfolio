@@ -61,13 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================================
-  // 2. MOBILE MENU TOGGLE
+  // 2. MOBILE MENU TOGGLE (Compact Dropdown Card)
   // ============================================
-  navToggle.addEventListener('click', () => {
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
     navToggle.classList.toggle('open');
     navMobile.classList.toggle('open');
-    // Prevent body scrolling when menu is open
-    document.body.style.overflow = navMobile.classList.contains('open') ? 'hidden' : '';
   });
 
   // Close mobile menu when a link is clicked
@@ -75,8 +74,15 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', () => {
       navToggle.classList.remove('open');
       navMobile.classList.remove('open');
-      document.body.style.overflow = '';
     });
+  });
+
+  // Close mobile menu on outside click
+  document.addEventListener('click', (e) => {
+    if (navMobile.classList.contains('open') && !navMobile.contains(e.target) && !navToggle.contains(e.target)) {
+      navToggle.classList.remove('open');
+      navMobile.classList.remove('open');
+    }
   });
 
   // ============================================
@@ -298,32 +304,64 @@ document.addEventListener('DOMContentLoaded', () => {
   document.head.appendChild(toastStyle);
 
   // ============================================
-  // 13. LIVE ACCENT THEME SWITCHER
-  // Supports: green, white, violet, blue
+  // 13. LIVE ACCENT COLOR THEME DROPDOWN
+  // Supports: emerald, ocean, violet, rose, amber, monochrome
   // ============================================
-  const themeDots = document.querySelectorAll('.theme-dot');
-  const currentSavedTheme = localStorage.getItem('portfolio-accent-theme') || 'green';
+  const themeWrap = document.getElementById('theme-dropdown-wrap');
+  const themePaletteBtn = document.getElementById('theme-palette-btn');
+  const themeOptions = document.querySelectorAll('.theme-option');
+
+  // Toggle dropdown on palette button click
+  if (themePaletteBtn && themeWrap) {
+    themePaletteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      themeWrap.classList.toggle('open');
+    });
+
+    // Close dropdown on outside click
+    document.addEventListener('click', (e) => {
+      if (!themeWrap.contains(e.target)) {
+        themeWrap.classList.remove('open');
+      }
+    });
+
+    // Prevent clicks inside dropdown container from propagating
+    const themeDropdown = document.getElementById('theme-dropdown');
+    if (themeDropdown) {
+      themeDropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    }
+  }
+
+  // Load saved theme or default to 'emerald'
+  const currentSavedTheme = localStorage.getItem('portfolio-accent-theme') || 'emerald';
   setTheme(currentSavedTheme);
 
   function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('portfolio-accent-theme', theme);
 
-    // Sync active state across all theme switcher instances (desktop & mobile)
-    themeDots.forEach(dot => {
-      if (dot.getAttribute('data-theme') === theme) {
-        dot.classList.add('active');
+    // Sync active state and checkmarks across all instances (desktop & mobile)
+    themeOptions.forEach(opt => {
+      const optTheme = opt.getAttribute('data-theme');
+      if (optTheme === theme || (theme === 'green' && optTheme === 'emerald') || (theme === 'blue' && optTheme === 'ocean') || (theme === 'white' && optTheme === 'monochrome')) {
+        opt.classList.add('active');
       } else {
-        dot.classList.remove('active');
+        opt.classList.remove('active');
       }
     });
   }
 
-  themeDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const selected = dot.getAttribute('data-theme');
+  themeOptions.forEach(opt => {
+    opt.addEventListener('click', () => {
+      const selected = opt.getAttribute('data-theme');
       if (selected) {
         setTheme(selected);
+        // Close dropdown after selection
+        setTimeout(() => {
+          if (themeWrap) themeWrap.classList.remove('open');
+        }, 150);
       }
     });
   });
