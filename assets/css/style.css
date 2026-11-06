@@ -668,6 +668,7 @@ img {
   font-weight: 600;
   color: var(--accent-green);
   margin-bottom: 18px;
+  min-height: 1.4em;
 }
 
 .hero-desc {
