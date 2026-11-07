@@ -202,13 +202,14 @@ img {
 
 /* Container & Sections */
 .container {
-  max-width: 1140px;
+  width: 94%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 16px;
 }
 
 .section-padding {
-  padding: 90px 0;
+  padding: 75px 0;
 }
 
 /* Section Header (Matches reference labels) */
@@ -355,9 +356,10 @@ img {
 }
 
 .nav-container {
-  max-width: 1140px;
+  width: 94%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 16px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -650,9 +652,9 @@ img {
    HERO SECTION
    ========================================================================== */
 #hero {
-  min-height: 90vh;
-  padding-top: 130px;
-  padding-bottom: 70px;
+  min-height: 85vh;
+  padding-top: 110px;
+  padding-bottom: 75px;
   display: flex;
   align-items: center;
   background: var(--bg-primary);
@@ -661,8 +663,8 @@ img {
 
 .hero-content {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 48px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
   align-items: center;
 }
 
@@ -710,7 +712,7 @@ img {
   font-size: 1.02rem;
   color: var(--text-secondary);
   line-height: 1.65;
-  max-width: 580px;
+  max-width: 620px;
   margin-bottom: 30px;
 }
 
@@ -718,14 +720,15 @@ img {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 42px;
+  margin-bottom: 0;
 }
 
 /* Hero Stats Row */
 .hero-stats {
   display: flex;
-  gap: 36px;
+  gap: 48px;
   padding-top: 28px;
+  margin-top: 38px;
   border-top: 1px solid var(--border-subtle);
 }
 
@@ -753,19 +756,19 @@ img {
 /* Hero Right: Profile Card */
 .hero-visual {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .hero-card-wrapper {
   width: 100%;
-  max-width: 320px;
+  max-width: 350px;
 }
 
 .hero-avatar-card {
   background: var(--bg-card);
   border: 1px solid var(--border-card);
   border-radius: var(--radius-card);
-  padding: 30px 24px;
+  padding: 28px 24px;
   text-align: center;
   transition: var(--transition);
 }
@@ -774,9 +777,9 @@ img {
 }
 
 .avatar-photo-wrap {
-  width: 130px;
-  height: 130px;
-  margin: 0 auto 18px;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 16px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid var(--border-card);
@@ -875,7 +878,8 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  margin: 28px 0;
+  margin-top: 24px;
+  margin-bottom: 0;
 }
 
 .info-item {
@@ -1284,7 +1288,7 @@ img {
 .exp-stepper {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   border-left: 2px solid var(--border-card);
   padding-left: 16px;
   margin: 18px 0;
@@ -1292,17 +1296,20 @@ img {
 
 .exp-step-item {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.85rem;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
 }
 
 .exp-step-badge {
   font-size: 0.72rem;
   font-weight: 600;
-  padding: 2px 8px;
+  padding: 3px 8px;
   border-radius: 4px;
   text-transform: uppercase;
+  flex-shrink: 0;
+  margin-top: 1px;
+  white-space: nowrap;
 }
 .exp-step-badge.active {
   background: var(--accent-green);
@@ -1314,6 +1321,13 @@ img {
   color: var(--text-secondary);
 }
 
+.exp-step-info {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .exp-step-title {
   color: #FFFFFF;
   font-weight: 600;
@@ -1321,6 +1335,8 @@ img {
 
 .exp-step-dates {
   color: var(--text-muted);
+  font-size: 0.82rem;
+  white-space: nowrap;
 }
 
 .exp-desc {
@@ -1765,6 +1781,16 @@ textarea.form-input {
    RESPONSIVENESS (Mobile & Tablet)
    ========================================================================== */
 @media (max-width: 992px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  .nav-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
   .hero-content {
     display: flex;
     flex-direction: column;
@@ -1814,10 +1840,12 @@ textarea.form-input {
   .hero-buttons {
     order: 6;
     justify-content: center;
-    margin-bottom: 36px;
+    margin-bottom: 0;
   }
   .hero-stats {
     order: 7;
+    margin-top: 24px;
+    padding-top: 18px;
     justify-content: center;
     width: 100%;
   }
@@ -1840,7 +1868,14 @@ textarea.form-input {
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 18px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px;
+  }
+  .nav-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px;
   }
   .section-padding {
     padding: 60px 0;
@@ -1904,12 +1939,15 @@ textarea.form-input {
     width: 100%;
     max-width: 340px;
     gap: 10px;
+    margin-bottom: 0;
   }
   .hero-buttons .btn {
     width: 100%;
     justify-content: center;
   }
   .hero-stats {
+    margin-top: 20px;
+    padding-top: 18px;
     gap: 16px;
     width: 100%;
     justify-content: space-around;
@@ -1975,6 +2013,19 @@ textarea.form-input {
   .exp-role {
     font-size: 1.1rem;
   }
+  .exp-step-item {
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .exp-step-info {
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+  }
+  .exp-step-dates {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
   .exp-links-row {
     flex-direction: column;
     gap: 10px;
@@ -2007,6 +2058,12 @@ textarea.form-input {
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  .nav-container {
+    padding: 0 16px;
+  }
   #hero {
     padding-top: 92px;
     padding-bottom: 40px;
@@ -2015,7 +2072,14 @@ textarea.form-input {
     margin-bottom: 20px;
   }
   .hero-card-wrapper {
-    max-width: 250px;
+    max-width: 290px;
+  }
+  .hero-buttons {
+    margin-bottom: 0;
+  }
+  .hero-stats {
+    margin-top: 18px;
+    padding-top: 16px;
   }
   .hero-avatar-card {
     padding: 18px 14px;

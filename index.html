@@ -74,7 +74,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=6.2" />
+  <link rel="stylesheet" href="assets/css/style.css?v=7.0" />
 
   <!-- Favicon & Apple Touch Icon -->
   <link rel="apple-touch-icon" href="assets/images/favicon.svg" />
@@ -286,22 +286,6 @@
               Download CV
             </a>
           </div>
-
-          <!-- Quick Stats -->
-          <div class="hero-stats">
-            <div class="stat-item">
-              <div class="stat-number" data-count="4" data-suffix="+">4+</div>
-              <div class="stat-label">Projects Built</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-count="5" data-suffix="th">5th</div>
-              <div class="stat-label">Semester</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-count="8" data-suffix="+">8+</div>
-              <div class="stat-label">Skills</div>
-            </div>
-          </div>
         </div>
 
         <!-- Hero Visual (Right) -->
@@ -318,6 +302,22 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- Quick Stats (Spanning cleanly across bottom of hero) -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number" data-count="4" data-suffix="+">4+</div>
+          <div class="stat-label">Projects Built</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="5" data-suffix="th">5th</div>
+          <div class="stat-label">Semester</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="8" data-suffix="+">8+</div>
+          <div class="stat-label">Skills</div>
+        </div>
       </div>
     </div>
   </section>
@@ -407,11 +407,7 @@
             </div>
           </div>
 
-          <!-- Buttons -->
-          <div class="about-buttons">
-            <a href="#contact" class="btn btn-primary">Get In Touch</a>
-            <a href="assets/docs/ashar_cv.pdf" class="btn btn-outline" download>Download CV</a>
-          </div>
+
         </div>
       </div>
     </div>
@@ -764,18 +760,24 @@
           <div class="exp-stepper">
             <div class="exp-step-item">
               <span class="exp-step-badge active">Current Role</span>
-              <span class="exp-step-title">Project Captain</span>
-              <span class="exp-step-dates">— Sep 2026 — Present</span>
+              <div class="exp-step-info">
+                <span class="exp-step-title">Project Captain</span>
+                <span class="exp-step-dates">Sep 2026 — Present</span>
+              </div>
             </div>
             <div class="exp-step-item">
               <span class="exp-step-badge prev">Promoted</span>
-              <span class="exp-step-title">Team Captain (Team Pluto)</span>
-              <span class="exp-step-dates">— Aug 2026 — Sep 2026</span>
+              <div class="exp-step-info">
+                <span class="exp-step-title">Team Captain (Team Pluto)</span>
+                <span class="exp-step-dates">Aug 2026 — Sep 2026</span>
+              </div>
             </div>
             <div class="exp-step-item">
               <span class="exp-step-badge prev">Started</span>
-              <span class="exp-step-title">Team Member</span>
-              <span class="exp-step-dates">— Jul 2026 — Aug 2026</span>
+              <div class="exp-step-info">
+                <span class="exp-step-title">Team Member</span>
+                <span class="exp-step-dates">Jul 2026 — Aug 2026</span>
+              </div>
             </div>
           </div>
 
