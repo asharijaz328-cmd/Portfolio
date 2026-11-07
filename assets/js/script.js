@@ -405,6 +405,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 120);
       }
     });
+  });
+
   // ============================================
   // CERTIFICATES INTERACTIVITY (Filter & Toggle)
   // ============================================
