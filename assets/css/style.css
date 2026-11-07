@@ -2302,6 +2302,14 @@ img {
   flex-shrink: 0;
 }
 
+.contact-detail-icon img,
+.contact-icon-img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
 .contact-detail-label {
   font-size: 0.72rem;
   color: var(--text-muted);
