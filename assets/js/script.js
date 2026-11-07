@@ -334,10 +334,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Load saved theme or default to 'emerald'
-  const currentSavedTheme = localStorage.getItem('portfolio-accent-theme') || 'emerald';
-  setTheme(currentSavedTheme);
-
   const themeColors = {
     emerald: { main: '#7ED491', hover: '#6bc77f', subtle: 'rgba(126, 212, 145, 0.12)', border: 'rgba(126, 212, 145, 0.35)' },
     ocean: { main: '#38BDF8', hover: '#0EA5E9', subtle: 'rgba(56, 189, 248, 0.14)', border: 'rgba(56, 189, 248, 0.4)' },
@@ -392,6 +388,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Load saved theme or default to 'emerald'
+  const currentSavedTheme = localStorage.getItem('portfolio-accent-theme') || 'emerald';
+  setTheme(currentSavedTheme);
+
+  // Attach click listeners to all theme options
   themeOptions.forEach(opt => {
     opt.addEventListener('click', (e) => {
       e.preventDefault();
