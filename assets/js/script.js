@@ -408,69 +408,81 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================
-  // CERTIFICATES INTERACTIVITY (Filter & Toggle)
+  // CERTIFICATES FILTER & TOGGLE LOGIC
   // ============================================
-  const certFilterBtns = document.querySelectorAll('.cert-filter-btn');
-  const certCards = document.querySelectorAll('.cert-card');
+  const certNavPills = document.querySelectorAll('.cert-nav-pill');
+  const allCertItems = document.querySelectorAll('.cert-master-spotlight, .cert-bento-card');
+  const extraCertCards = document.querySelectorAll('.cert-card-extra');
   const certToggleBtn = document.getElementById('cert-toggle-btn');
   const certToggleWrap = document.querySelector('.cert-toggle-wrap');
   let isCertsExpanded = false;
 
+  function applyCertVisibility(currentFilter) {
+    if (currentFilter === 'all') {
+      if (certToggleWrap) certToggleWrap.style.display = 'flex';
+      allCertItems.forEach(item => {
+        item.style.display = '';
+        if (item.classList.contains('cert-card-extra')) {
+          if (isCertsExpanded) {
+            item.classList.remove('is-hidden');
+            item.classList.add('visible');
+          } else {
+            item.classList.add('is-hidden');
+          }
+        } else {
+          item.classList.add('visible');
+        }
+      });
+    } else {
+      // Specific category: show all matching cards directly
+      if (certToggleWrap) certToggleWrap.style.display = 'none';
+      allCertItems.forEach(item => {
+        const category = item.getAttribute('data-category');
+        if (category === currentFilter) {
+          item.style.display = '';
+          item.classList.remove('is-hidden');
+          item.classList.add('visible');
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  }
+
   if (certToggleBtn) {
     certToggleBtn.addEventListener('click', () => {
       isCertsExpanded = !isCertsExpanded;
-      certCards.forEach((card, index) => {
-        if (index >= 4) {
-          if (isCertsExpanded) {
-            card.classList.remove('is-hidden');
-            card.style.display = '';
-          } else {
-            card.classList.add('is-hidden');
-            card.style.display = 'none';
-          }
-        }
-      });
-
+      const textSpan = certToggleBtn.querySelector('.cert-toggle-text');
       if (isCertsExpanded) {
+        extraCertCards.forEach(card => {
+          card.classList.remove('is-hidden');
+          card.classList.add('visible');
+        });
         certToggleBtn.classList.add('expanded');
-        certToggleBtn.querySelector('span').textContent = 'Show Less';
+        certToggleBtn.setAttribute('aria-expanded', 'true');
+        if (textSpan) textSpan.textContent = 'Show Less';
       } else {
+        extraCertCards.forEach(card => {
+          card.classList.add('is-hidden');
+        });
         certToggleBtn.classList.remove('expanded');
-        certToggleBtn.querySelector('span').textContent = 'View All Certificates (10)';
+        certToggleBtn.setAttribute('aria-expanded', 'false');
+        if (textSpan) textSpan.textContent = 'View More Certificates (6)';
+        const certSection = document.getElementById('certificates');
+        if (certSection) {
+          certSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     });
   }
 
-  if (certFilterBtns.length > 0) {
-    certFilterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        certFilterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.getAttribute('data-filter');
-
-        if (filter === 'all') {
-          if (certToggleWrap) certToggleWrap.style.display = '';
-          certCards.forEach((card, index) => {
-            if (isCertsExpanded || index < 4) {
-              card.classList.remove('is-hidden');
-              card.style.display = '';
-            } else {
-              card.classList.add('is-hidden');
-              card.style.display = 'none';
-            }
-          });
-        } else {
-          if (certToggleWrap) certToggleWrap.style.display = 'none';
-          certCards.forEach(card => {
-            const category = card.getAttribute('data-category');
-            if (category === filter) {
-              card.classList.remove('is-hidden');
-              card.style.display = '';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-        }
+  if (certNavPills.length > 0) {
+    certNavPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        certNavPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filter = pill.getAttribute('data-filter') || 'all';
+        applyCertVisibility(filter);
       });
     });
   }
