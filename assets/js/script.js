@@ -405,6 +405,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 120);
       }
     });
-  });
+  // ============================================
+  // CERTIFICATES FILTER TABS
+  // ============================================
+  const certFilterBtns = document.querySelectorAll('.cert-filter-btn');
+  const certItems = document.querySelectorAll('.cert-card, .cert-featured-card');
+
+  if (certFilterBtns.length > 0) {
+    certFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        certFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        certItems.forEach(item => {
+          const category = item.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            item.style.display = '';
+            item.classList.add('visible');
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
 
 });
