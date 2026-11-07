@@ -1035,7 +1035,6 @@ img {
   position: relative;
   background: #08090C;
   width: 100%;
-  aspect-ratio: 16 / 10;
   overflow: hidden;
   border-bottom: 1px solid var(--border-card);
   display: flex;
@@ -1052,6 +1051,7 @@ img {
   height: 30px;
   flex-shrink: 0;
   z-index: 2;
+  box-sizing: border-box;
 }
 
 .window-dots {
@@ -1080,18 +1080,19 @@ img {
 
 .project-screenshot {
   width: 100%;
-  height: calc(100% - 30px);
-  object-fit: contain;
-  object-position: center;
-  transition: transform 0.3s ease;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.35s ease;
   display: block;
   background: #08090C;
-  padding: 6px 8px 8px;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
 .project-card:hover .project-screenshot {
-  transform: scale(1.02);
+  transform: scale(1.025);
 }
 
 .project-meta-row {
@@ -2809,7 +2810,6 @@ textarea.form-input {
   }
   .project-thumb {
     height: auto;
-    aspect-ratio: 16 / 10;
   }
   .project-body {
     padding: 18px;
