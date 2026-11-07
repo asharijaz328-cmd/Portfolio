@@ -1968,22 +1968,258 @@ img {
   .cert-master-spotlight {
     grid-template-columns: 1fr;
     gap: 28px;
-    padding: 26px 24px;
+    padding: 28px 24px;
   }
   .cert-bespoke-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 768px) {
+  /* Back to top adjustment to avoid card overlap */
+  #back-to-top {
+    bottom: 16px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+    background: rgba(20, 20, 24, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  /* Smooth swipeable filter navigation */
+  .cert-filter-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 2px 12px;
+    margin-bottom: 22px;
+    gap: 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .cert-filter-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .cert-nav-pill {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+  }
+
+  /* MASTER SPOTLIGHT CARD ON MOBILE (Unified Luxury Tech Card) */
+  .cert-master-spotlight {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    gap: 0;
+    border-radius: var(--radius-card);
+    margin-bottom: 22px;
+    background: linear-gradient(180deg, rgba(22, 23, 28, 0.98), rgba(12, 13, 16, 0.99));
+    border: 1px solid rgba(0, 129, 251, 0.45);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Move certificate visual to TOP of featured card on mobile */
+  .cert-spotlight-visual {
+    order: -1;
+    width: 100%;
+    background: #090A0D;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .cert-doc-frame {
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .cert-doc-img {
+    aspect-ratio: 16 / 9.5;
+    object-fit: cover;
+  }
+
+  .cert-spotlight-info {
+    padding: 18px 16px 20px;
+    width: 100%;
+  }
+
+  .cert-spotlight-top {
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+
+  .cert-spotlight-tag {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+  }
+
+  .cert-spotlight-year {
+    font-size: 0.72rem;
+  }
+
+  .cert-spotlight-brand {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .cert-brand-tile.meta-tile {
+    width: 34px;
+    height: 34px;
+  }
+  .cert-brand-tile.meta-tile svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .cert-issuer-label {
+    font-size: 0.8rem;
+  }
+
+  .cert-id-label {
+    font-size: 0.68rem;
+  }
+
+  .cert-spotlight-heading {
+    font-size: 1.15rem;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .cert-spotlight-chips {
+    gap: 5px;
+    margin-bottom: 16px;
+  }
+
+  .cert-chip {
+    font-size: 0.68rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  /* Two compact side-by-side action buttons */
+  .cert-spotlight-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .cert-action-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 9px 10px;
+    font-size: 0.78rem;
+    border-radius: 6px;
+    text-align: center;
+    white-space: nowrap;
+    gap: 6px;
+  }
+
+  .cert-action-btn svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+  }
+
+  /* GRID CARDS ON MOBILE */
   .cert-bespoke-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
-  .cert-master-spotlight {
-    padding: 22px 18px;
+
+  .cert-bento-card {
+    border-radius: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
   }
+
+  .cert-bento-media {
+    aspect-ratio: 16 / 9; /* Cinematic, sleek aspect ratio */
+  }
+
+  .cert-bento-content {
+    padding: 14px 16px 14px;
+  }
+
+  .cert-bento-header {
+    margin-bottom: 8px;
+  }
+
+  .cert-bento-issuer {
+    font-size: 0.76rem;
+  }
+
+  .cert-bento-type {
+    font-size: 0.68rem;
+    padding: 2px 6px;
+  }
+
+  .cert-bento-title {
+    font-size: 0.96rem;
+    line-height: 1.35;
+    margin-bottom: 12px;
+    min-height: auto; /* REMOVE fixed min-height so NO dead black void! */
+    display: block;
+    overflow: visible;
+  }
+
+  .cert-bento-footer {
+    padding-top: 10px;
+    margin-top: 0;
+  }
+
+  .cert-bento-code {
+    font-size: 0.68rem;
+  }
+
+  .cert-bento-link {
+    font-size: 0.78rem;
+  }
+
+  /* View More Button on Mobile */
+  .cert-toggle-wrap {
+    margin-top: 24px;
+  }
+
+  .cert-toggle-btn {
+    width: 100%;
+    max-width: 290px;
+    justify-content: center;
+    padding: 11px 20px;
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 480px) {
   .cert-spotlight-heading {
-    font-size: 1.3rem;
+    font-size: 1.08rem;
+  }
+
+  .cert-spotlight-info {
+    padding: 16px 14px 18px;
+  }
+
+  .cert-bento-content {
+    padding: 12px 14px 13px;
+  }
+
+  .cert-bento-title {
+    font-size: 0.92rem;
+    margin-bottom: 10px;
+  }
+
+  .cert-action-btn {
+    font-size: 0.74rem;
+    padding: 8px 6px;
   }
 }
 
