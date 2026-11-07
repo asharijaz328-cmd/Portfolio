@@ -1990,26 +1990,28 @@ img {
     border-color: rgba(255, 255, 255, 0.15);
   }
 
-  /* Smooth swipeable filter navigation */
+  /* 2x2 Symmetrical Filter Grid (Clean, Zero Overflow, 100% Visible) */
   .cert-filter-nav {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 4px 2px 12px;
-    margin-bottom: 22px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    margin-bottom: 20px;
+    width: 100%;
   }
-  .cert-filter-nav::-webkit-scrollbar {
-    display: none;
-  }
+
   .cert-nav-pill {
-    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
     white-space: nowrap;
-    padding: 6px 14px;
-    font-size: 0.78rem;
+    border-radius: 8px;
+    text-align: center;
+    letter-spacing: -0.15px;
+    box-sizing: border-box;
   }
 
   /* MASTER SPOTLIGHT CARD ON MOBILE (Unified Luxury Tech Card) */
