@@ -406,10 +406,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   // ============================================
-  // CERTIFICATES FILTER TABS
+  // CERTIFICATES INTERACTIVITY (Filter & Toggle)
   // ============================================
   const certFilterBtns = document.querySelectorAll('.cert-filter-btn');
-  const certItems = document.querySelectorAll('.cert-card, .cert-featured-card');
+  const certCards = document.querySelectorAll('.cert-card');
+  const certToggleBtn = document.getElementById('cert-toggle-btn');
+  const certToggleWrap = document.querySelector('.cert-toggle-wrap');
+  let isCertsExpanded = false;
+
+  if (certToggleBtn) {
+    certToggleBtn.addEventListener('click', () => {
+      isCertsExpanded = !isCertsExpanded;
+      certCards.forEach((card, index) => {
+        if (index >= 4) {
+          if (isCertsExpanded) {
+            card.classList.remove('is-hidden');
+            card.style.display = '';
+          } else {
+            card.classList.add('is-hidden');
+            card.style.display = 'none';
+          }
+        }
+      });
+
+      if (isCertsExpanded) {
+        certToggleBtn.classList.add('expanded');
+        certToggleBtn.querySelector('span').textContent = 'Show Less';
+      } else {
+        certToggleBtn.classList.remove('expanded');
+        certToggleBtn.querySelector('span').textContent = 'View All Certificates (10)';
+      }
+    });
+  }
 
   if (certFilterBtns.length > 0) {
     certFilterBtns.forEach(btn => {
@@ -418,15 +446,29 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.classList.add('active');
         const filter = btn.getAttribute('data-filter');
 
-        certItems.forEach(item => {
-          const category = item.getAttribute('data-category');
-          if (filter === 'all' || category === filter) {
-            item.style.display = '';
-            item.classList.add('visible');
-          } else {
-            item.style.display = 'none';
-          }
-        });
+        if (filter === 'all') {
+          if (certToggleWrap) certToggleWrap.style.display = '';
+          certCards.forEach((card, index) => {
+            if (isCertsExpanded || index < 4) {
+              card.classList.remove('is-hidden');
+              card.style.display = '';
+            } else {
+              card.classList.add('is-hidden');
+              card.style.display = 'none';
+            }
+          });
+        } else {
+          if (certToggleWrap) certToggleWrap.style.display = 'none';
+          certCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            if (category === filter) {
+              card.classList.remove('is-hidden');
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        }
       });
     });
   }
