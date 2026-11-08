@@ -2290,6 +2290,233 @@ img {
 }
 
 /* ==========================================================================
+   EDUCATION SECTION (Academic Journey)
+   ========================================================================== */
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+}
+
+.education-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 30px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.education-card:hover {
+  border-color: #383838;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.6);
+}
+
+.education-card.in-progress-card {
+  border-color: rgba(126, 212, 145, 0.28);
+  background: linear-gradient(180deg, rgba(20, 20, 22, 0.96) 0%, rgba(14, 15, 18, 0.98) 100%);
+}
+
+[data-theme="ocean"] .education-card.in-progress-card { border-color: rgba(56, 189, 248, 0.28); }
+[data-theme="violet"] .education-card.in-progress-card { border-color: rgba(129, 140, 248, 0.28); }
+[data-theme="rose"] .education-card.in-progress-card { border-color: rgba(251, 113, 133, 0.28); }
+[data-theme="amber"] .education-card.in-progress-card { border-color: rgba(245, 158, 11, 0.28); }
+[data-theme="monochrome"] .education-card.in-progress-card { border-color: rgba(255, 255, 255, 0.28); }
+
+.education-card.in-progress-card:hover {
+  border-color: var(--accent-theme);
+}
+
+.edu-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.edu-institute-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.edu-logo-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--bg-pill);
+  border: 1px solid var(--border-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  color: var(--accent-theme);
+}
+
+.edu-logo-box.has-logo {
+  background: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.2);
+  padding: 6px;
+}
+
+.edu-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.edu-logo-box.icon-fallback {
+  background: #18191E;
+  border-color: #2E3038;
+}
+
+.edu-degree {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 3px;
+  letter-spacing: -0.01em;
+}
+
+.edu-institute {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.edu-location {
+  color: var(--text-muted);
+}
+
+.edu-meta-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.edu-status-badge {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.edu-status-badge.in-progress {
+  background: rgba(126, 212, 145, 0.12);
+  border: 1px solid rgba(126, 212, 145, 0.35);
+  color: var(--accent-theme);
+}
+
+[data-theme="ocean"] .edu-status-badge.in-progress { background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.35); }
+[data-theme="violet"] .edu-status-badge.in-progress { background: rgba(129, 140, 248, 0.12); border-color: rgba(129, 140, 248, 0.35); }
+[data-theme="rose"] .edu-status-badge.in-progress { background: rgba(251, 113, 133, 0.12); border-color: rgba(251, 113, 133, 0.35); }
+[data-theme="amber"] .edu-status-badge.in-progress { background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.35); }
+[data-theme="monochrome"] .edu-status-badge.in-progress { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.35); }
+
+.edu-status-badge.completed {
+  background: #18191D;
+  border: 1px solid var(--border-card);
+  color: var(--text-muted);
+}
+
+.edu-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-theme);
+  box-shadow: 0 0 8px var(--accent-theme);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+.edu-period-badge {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 50px;
+  background: #18191D;
+  border: 1px solid var(--border-card);
+  color: var(--text-secondary);
+}
+
+.edu-desc {
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.edu-highlight-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.edu-highlight-title {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.edu-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.edu-tag {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  background: #18191D;
+  border: 1px solid var(--border-card);
+  color: var(--text-secondary);
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.edu-tag:hover {
+  border-color: var(--accent-theme);
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+@media (max-width: 768px) {
+  .education-card {
+    padding: 22px 18px;
+  }
+  .edu-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .edu-degree {
+    font-size: 1.12rem;
+  }
+  .edu-meta-badges {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* ==========================================================================
    CONTACT SECTION (With Chat on WhatsApp & Sleek Form)
    ========================================================================== */
 .contact-grid {
