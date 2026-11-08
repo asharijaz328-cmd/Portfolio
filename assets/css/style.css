@@ -789,6 +789,12 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 18%;
+  transition: transform 0.35s ease;
+}
+
+.hero-avatar-card:hover .avatar-photo {
+  transform: scale(1.05);
 }
 
 .hero-card-role {
